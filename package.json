@@ -4,7 +4,7 @@
   "description": "this is a node server for Ashish chatweb",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server"
+     "start": "nodemon server.js"
   },
   "author": "Ashish",
   "license": "ISC",
