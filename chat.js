@@ -1,4 +1,4 @@
-const socket = io('http://localhost:400');
+const socket = io('https://dashboard.heroku.com/apps/ashish-chat-app1/deploy/github');
 console.log('this is chat js ')
 const names = prompt("Enter your NAME TO JOIN");
 
