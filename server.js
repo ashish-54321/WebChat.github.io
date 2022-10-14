@@ -5,7 +5,7 @@ const app = express()
 
 const http = require('http').createServer(app)
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT||4000 
 
 
 http.listen(PORT, () => {
