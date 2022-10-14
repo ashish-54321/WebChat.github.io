@@ -22,13 +22,20 @@ app.get('/', (req,res) =>{
 /// [ socket.io]/// 
 const io = require('socket.io')(http)
 
-
+var users = {};
 
 
 io.on('connection', (socket) =>{
     console.log('connected...')
 
-    
+    socket.on('joined-user' , (names)=>{
+
+        users[socket.id]=names; 
+      
+        socket.broadcast.emit('user-connected', names );
+
+        
+    })
 
     socket.on('message' , (msg) =>{
         socket.broadcast.emit('message', msg)
