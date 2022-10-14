@@ -76,12 +76,12 @@ function text() {
     //var nextPage= document.getElementById("nexthtml");
     var div = document.createElement("div");
     div.style.width = "300px";
-    div.style.padding = "50px";
+    div.style.padding = "10px";
     // div.style.margin = "15%";
     div.style.marginTop = "1%";
     div.style.marginBottom = "1%";
-    div.style.marginLeft = "26%";
-    div.style.borderRadius = "15px";
+    div.style.marginRight = "26%";
+    div.style.borderRadius = "16px";
     // div.style.border = "15px solid green";
     // div.style.marginLeft= "80%";
     div.style.background = "#ffffff";
@@ -123,14 +123,14 @@ socket.on('message', (msg) => {
 
     var div = document.createElement("div");
     div.style.width = "300px";
-    div.style.padding = "50px";
+    div.style.padding = "10px";
     // div.style.margin = "15%";
     // div.style.border = "15px solid green";
-    div.style.marginLeft = "50%";
+    div.style.marginLeft = "15%";
     div.style.marginTop = "1%";
     div.style.marginBottom = "1%";
     div.style.background = "#DCF8C6";
-    div.style.borderRadius = "15px";
+    div.style.borderRadius = "16px";
 
     div.innerHTML = markup;
     document.getElementById("get").appendChild(div);
