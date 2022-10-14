@@ -14,7 +14,7 @@ http.listen(PORT, () => {
 // app.use(express.static(__dirname + '/public')) 
 
 app.get('/', (req,res) =>{
-    res.send("server working.....")
+   res.sendFile(__dirname + '/chat.html')
     // app.use(express.static(__dirname + 'chat.css')) 
     
 } )
