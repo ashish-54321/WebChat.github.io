@@ -104,12 +104,7 @@ body {
                         USERS JOIN
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <!-- users record -->
-                    <div id="record"></div>
-                        <!-- <a > </a>
-                        <a class="dropdown-item" href="#"></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a> -->
+                   
                     </div>
                 </li>
             </ul>
@@ -178,7 +173,41 @@ body {
     <script>    
     const socket = io();
 console.log('this is chat js ')
-const names = prompt("Enter your NAME TO JOIN");
+var dropdown = document.querySelector(".dropdown-menu")
+do {
+    names = prompt("Enter your NAME TO JOIN");
+
+} while (!names);
+
+socket.emit('joined-user', names);
+
+
+socket.on('user-connected', (socket_name) => {
+
+    userJoinLeft(socket_name, 'joined');
+
+});
+
+
+function userJoinLeft(name, status) {
+
+    var div = document.createElement("div")
+    
+    var content = `<a class="dropdown-item" href="#">   <p><b>${names}</b> ${status} 🟢 </a>  `;
+
+    div.innerHTML = content;
+    dropdown.appendChild(div);
+
+
+}
+        
+        
+        
+        
+        
+        
+        
+        
 
 
 
