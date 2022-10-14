@@ -5,151 +5,95 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chat Web</title>
-                                 <!-- CDN Link of BootStrap -->
+    <!-- CDN Link of BootStrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                                 <!-- CSS FILE Link -->
-<!--     <link rel="stylesheet" href="chat.css"> -->
-    <style> 
-    
-    /* #mesages{
+    <!-- CSS FILE Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/my-login.css">
+    <link rel="stylesheet" href="/chat.css">
 
-    background-color: lightgrey;
-    width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
-} */
-.container {
-
-    /* position: fixed; */
-    background-color: white;
-    overflow: hidden;
-}
-
-body {
-
-    /* background-image: url('https://media.istockphoto.com/vectors/social-media-blue-seamless-pattern-vector-id690445882?k=20&m=690445882&s=612x612&w=0&h=Y8PXV590DeTKKuOdl5Nwc8xiTOW5Ty1iJfzUDTKjKgc='); */
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /* overflow: hidden; */
-}
-
-#mesagesbox {
-
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    scroll-behavior: smooth;
-
-}
-
-#type {
-    position: sticky;
-    top: 1px;
-}
-
-/* loding animation  */
-#loader {
-    margin-left: 50%;
-    display: none;
-    border: 16px solid #f3f3f3;
-    /* Light grey */
-    border-top: 16px solid #3498db;
-    /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-#kop{
-   margin-left: 46%;
-}
-    
-    </style>
-   
 </head>
 
+
+<!-- ///////////////////          body starts  /////////////////////////////////  -->
+
 <body>
-    <!-- Nav bar starts-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--  //////////////////////////////// [ chating Web App HTML  ] -->
+    <div id="logicchat">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
+        <!-- Nav bar starts-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <a class="navbar-brand" href="#"><h3>ChatWeb.</h3><p3>by ASHISH TIWARI</p3></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        USERS JOIN
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">  <p><b>You</b> online 🟢</a>
-                   
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    <!-- Nav bar ends -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
 
-    <!-- Type box starts -->
-    <div class="container" id="type">
-        <h1> Chat in Web</h1>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            USERS JOIN
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">
+                                <p><b>You</b> online 🟢
+                            </a>
 
-        <!-- Typing Area -->
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1"> Type hear </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
-        </form>
+        </nav>
+        <!-- Nav bar ends -->
 
 
-         <!-- All buttons -->
-        <button onclick="text()" type="button" class="btn btn-primary btn-lg">Send </button>
-       
-        <button onclick="clearchat(),setTimeout(load,2000)" type="button" class="btn btn-secondary btn-lg"
-            style="padding-left: 16px; margin-left: 765px;">clear chat</button>
+        <!-- //////////////////////////////////////////// [ break ] /////////////////////////////////////////////// -->
 
-        <hr>
-    </div>
-    <!-- Type box Endes -->
+        <!-- Type box starts -->
+        <div class="container" id="type">
+            <h1> Chat in Web</h1>
+
+            <!-- Typing Area -->
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"> Type hear </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
 
 
-    <!-- Contener Starts -->
-    
+            <!-- All buttons -->
+            <button onclick="text()" type="button" class="btn btn-primary btn-lg">Send </button>
+
+            <button onclick="clearchat(),setTimeout(load,2000)" type="button" class="btn btn-secondary btn-lg"
+                style="padding-left: 16px; margin-left: 765px;">clear chat</button>
+
+            <hr>
+        </div>
+        <!-- Type box Endes -->
+
+        <!-- ////////////////////////////////////////////////////////////////  break ////////////////////////////// -->
+        <!-- Contener Starts -->
+
         <div class="container-fluid">
 
 
             <div class="container" id="mesagesbox">
                 <div>
                     <div>
-                        <h2 id ="kop"> Your Mesages</h2>
+                        <h2 id="kop"> Your Mesages</h2>
                     </div>
                     <!-- Append All chats Hear -->
                     <div id="get"></div>
@@ -159,170 +103,76 @@ body {
                 </div>
             </div>
         </div>
-   
+    </div>
+
 
     <!-- Contener ends -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+    <!-- /////////////////// [   login forn html Starts   ] ////////////////////////////////////////////////////////-->
 
 
 
 
 
+    <div class="my-login-page" id="myForm">
+        <section class="h-100">
+            <div class="container h-100">
+                <div class="row justify-content-md-center h-100">
+                    <div class="card-wrapper">
+                        <div class="brand">
+                            <img src="logo.jpg" alt="logo">
+                        </div>
+                        <div class="card fat">
+                            <div class="card-body">
+                                <h4 class="card-title">WELLCOME TO WEB CHAT !</h4>
+                                <!-- <form onclick="closeForm()" class="my-login-validation" novalidate=""> -->
+                                <div class="form-group">
+                                    <label for="email">Your Name </label>
 
-    <!-- All java file link here  -->
-    <!-- <script src="/server/server.js"></script> -->
+
+                                    <input id="email" type="email" class="form-control" name="email" required autofocus>
+
+                                </div>
+
+
+
+
+
+                                <div class="form-group m-0">
+
+                                    <button type="button" class="btn btn-primary" onclick="closeForm()">
+                                        Login
+                                    </button>
+                                </div>
+
+
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                        <div class="footer">
+                            Copyright &copy; 2022 &mdash; Devloper- ASHISH TIWARI
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!-- /////////////////////////////[ Ends ]/////////////////////////////////////////// -->
+
+
+
+    <!-- ////////////////////////////////////////////// All .js file link here //////////////////////////// -->
+
     <script src="/socket.io/socket.io.js"></script>
-    <script>    
-    const socket = io();
-console.log('this is chat js ')
-var dropdown = document.querySelector(".dropdown-menu")
-do {
-    names = prompt("Enter your NAME TO JOIN");
-
-} while (!names);
-
-socket.emit('joined-user', names);
-
-
-socket.on('user-connected', (socket_name) => {
-
-    userJoinLeft(socket_name, 'joined');
-
-});
-
-
-function userJoinLeft(name, status) {
-
-    var div = document.createElement("div")
-    
-    var content = `<a class="dropdown-item" href="#">   <p><b>${name}</b> ${status} 🟢 </a>  `;
-
-    div.innerHTML = content;
-    dropdown.appendChild(div);
-
-
-}
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-///////////////////////////////////////// [ send Message ]/////////////////////////////////////////////////
-
-
-
-function text() {
-
-    var x = document.getElementById("exampleFormControlTextarea1").value;
-    // 
-    //var nextPage= document.getElementById("nexthtml");
-    var div = document.createElement("div");
-    div.style.width = "300px";
-    div.style.padding = "50px";
-    // div.style.margin = "15%";
-    div.style.marginTop = "1%"; 
-    div.style.marginBottom = "1%";
-    div.style.marginLeft = "26%";
-    div.style.borderRadius = "15px";
-    // div.style.border = "15px solid green";
-    // div.style.marginLeft= "80%";
-    div.style.background = "#ffffff";
-    div.innerHTML = x;
-    document.getElementById("get").appendChild(div);
-    // document.getElementById("nexthtml").appendChild(div );
-
-    document.getElementById("exampleFormControlTextarea1").value = "";
-    // document.body.scrollHeight = 0;
-    // document.documentElement.scrollTop = 0;
-    window.scrollTo(0, document.body.scrollHeight);
-    /////////////////////////////////////////////////////////////////////
-
-    let msg = {
-        user: names,
-        message: x
-    }
-    // send to server
-
-    socket.emit('message', msg)
-
-}
-
-//////////////////////////////////////////////////////[ recive Message ]/////////////////////////////////////////////
-
-socket.on('message', (msg) => {
-
-
-
-
-
-    // <h4>${msg.user}</h4>
-    let markup = `
-    
-    <p>${msg.message}</p>
-    `
-
-
-
-    var div = document.createElement("div");
-    div.style.width = "300px";
-    div.style.padding = "50px";
-    // div.style.margin = "15%";
-    // div.style.border = "15px solid green";
-    div.style.marginLeft = "50%";
-    div.style.marginTop = "1%";
-    div.style.marginBottom = "1%";
-    div.style.background = "#DCF8C6";
-    div.style.borderRadius = "15px";
-
-    div.innerHTML = markup;
-    document.getElementById("get").appendChild(div);
-
-    window.scrollTo(0, document.body.scrollHeight);
-
-
-    /////////////////////////[online ]///////////////////////
-
-
-
-
-
-})
-
-
-///////////////////////////////////////// [ clear chat ]////////////////////////////////////////////////////////
-
-function clearchat() {
-
-    var x = document.getElementById("loader");
-    // if (x.style.display === "none") {
-    x.style.display = "block";
-    // } else {
-    //   x.style.display = "none";
-    // }
-
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-
-}
-
-function load() {
-    window.location.reload();
-}
-
-
-
-
-    
-    </script>
-    
+    <script src="/chat.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -333,10 +183,8 @@ function load() {
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-      
-   
-    <!-- <script src="/server.js"></script> -->
 
 </body>
 <!-- that's All the end of HTML  -->
+
 </html>
