@@ -1,36 +1,34 @@
-/* #mesages{
 
-    background-color: lightgrey;
-    width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
-} */
-.container {
+#type {
 
-    /* position: fixed; */
+  
     background-color: white;
     overflow: hidden;
 }
 
-body{
+body {
 
-      /* background-image: url('https://media.istockphoto.com/vectors/social-media-blue-seamless-pattern-vector-id690445882?k=20&m=690445882&s=612x612&w=0&h=Y8PXV590DeTKKuOdl5Nwc8xiTOW5Ty1iJfzUDTKjKgc='); */
-      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      /* overflow: hidden; */
- 
+    
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
+
 }
 
-#mesagesbox {
-
+#overAll {
+     max-width: 955px;
+    margin: auto;
+    height: 60vh; 
+    
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     scroll-behavior: smooth;
+
+
 
 }
 
@@ -62,11 +60,38 @@ body{
         transform: rotate(360deg);
     }
 }
-#kop{
-   margin-left: 46%;
+
+#kop {
+    margin-left: 46%;
 }
 
-#logicchat{
+#logicchat {
     display: none;
+
+}
+
+
+
+.message{
+
+    
+    width: fit-content;
+    padding: 10px;
+    margin: 17px 12px;
+    border-radius: 16px;
+}
+
+.income {
+    
+background: #ffffff;
+    float: left;
+    clear: both;
+}
+
+.outcome{
+     background: #DCF8C6;
    
+
+    float: right;
+    clear: both;
 }
