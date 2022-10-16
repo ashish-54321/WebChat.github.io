@@ -95,3 +95,16 @@ background: #ffffff;
     float: right;
     clear: both;
 }
+
+.status {
+    clear: both;
+    background: #cec8c8;
+    width: fit-content;
+    padding: 6px;
+    padding-bottom: 1px;
+    border-radius: 16px;
+    margin-left: 46%;
+ /* color: red; */
+}
+
+
