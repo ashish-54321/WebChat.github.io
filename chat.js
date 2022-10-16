@@ -21,26 +21,35 @@ function closeForm() {
 }
 
 
-socket.on('user-connected', (socket_name) => {
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    userJoinLeft(socket_name, 'online');
+socket.on('user-disconnected', (left) => {
+    let div = document.createElement("div")
+    
+    div.innerHTML= `<p><b>${left}</b> left the chat</p>`;
 
-});
+    div.classList.add("status");
+    container.appendChild(div);
 
+  
 
-function userJoinLeft(name, status) {
+})
 
-    var div = document.createElement("div")
+////////////////////////////////////////////////////////////////////////////////////////////////
+socket.on('user-list', (users) => {
+    dropdown.innerHTML = "";
+    users_arr = Object.values(users);
+    for (let i = 0; i < users_arr.length; i++) {
+        let div = document.createElement("div");
+        // div.innerText=
+        var content = `<a class="dropdown-item" href="#">   <p><b>${users_arr[i]}</b> online  🟢</p></a>  `;
+        div.innerHTML = content;
 
+        dropdown.appendChild(div);
 
-    var content = `<a class="dropdown-item" href="#">   <p><b>${name}</b> ${status} 🟢 </p></a>  `;
+    }
 
-    div.innerHTML = content;
-
-    dropdown.appendChild(div);
-
-
-}
+})
 
 
 ///////////////////////////////////////// [ send Message ]/////////////////////////////////////////////////
