@@ -41,7 +41,7 @@ io.on('connection', (socket) =>{
 
         users[socket.id]=names; 
       
-        socket.broadcast.emit('user-connected', names );
+        io.emit("user-list",users);
 
         
     })
@@ -51,4 +51,13 @@ io.on('connection', (socket) =>{
         socket.broadcast.emit('message', msg)
 
     })
+    
+    socket.on('disconnect',()=>{
+        // var user=users[socket.id];
+        socket.broadcast.emit('user-disconnected', usee=users[socket.id]);
+        delete users[socket.id];
+        io.emit("user-list",users);
+    
+    })
+    
 })
