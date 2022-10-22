@@ -37,8 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <button onclick="clearchat(),setTimeout(load,2000)" type="button"
-                            class="btn btn-secondary btn-lg">clear chat</button>
+                        <button onclick="clearchat()" type="button" class="btn btn-secondary btn-lg">clear chat</button>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -62,41 +61,43 @@
         </nav>
         <!-- Nav bar ends -->
 
-
         <!-- //////////////////////////////////////////// [ break ] /////////////////////////////////////////////// -->
+        <!-- flex box -->
+        <div id="option-box">
+            <h1> Private Chat </h1>
+            <span> coming soon... </span>
+              <hr>
+            <div class="side-panel-user">
+                <a class="dropdown-item" href="#">
+                    <p><b>NO ONE JOIN NOW </b> only you online 🟢
+                        <hr>
+                </a>
+            </div>
+
+        </div>
 
         <!-- Type box starts -->
-        <div class="container" id="type">
-            <h1> Chat in Web</h1>
 
-            <!-- Typing Area -->
-            <form>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1"> Type hear </label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-            </form>
+        <div class="msgbox" id="type">
 
 
-            <!-- All buttons -->
-            <button onclick="text()" type="button" class="btn btn-primary btn-lg">Send </button>
 
-            <hr>
-        </div>
-        <!-- Type box Endes -->
 
-        <!-- ////////////////////////////////////////////////////////////////  break ////////////////////////////// -->
-        <!-- Contener Starts -->
 
-        <div class="msgbox" id="overAll">
-            <div>
-                <h2 id="kop"> Your Mesages</h2>
-            </div>
-            
             <div id="loader"></div>
 
+
+
         </div>
 
+        <div id="form-txt">
+
+
+
+            <textarea id="exampleFormControlTextarea1" rows="3" placeholder="Typing ...."></textarea>
+            <!-- All buttons -->
+            <button onclick="text()" type="button" class="btn btn-primary btn-lg" id="send-btn">Send </button>
+        </div>
     </div>
 
     <!-- Contener ends -->
@@ -119,7 +120,7 @@
                         <div class="card fat">
                             <div class="card-body">
                                 <h4 class="card-title">WELLCOME TO WEB CHAT !</h4>
-                                
+
                                 <div class="form-group">
                                     <label for="email">Your Name </label>
 
