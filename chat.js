@@ -3,17 +3,17 @@ console.log('this is chat js ')
 
 var names;
 var dropdown = document.querySelector(".dropdown-menu")
-var container =document.querySelector(".msgbox")
+var dropdownSidepanel = document.querySelector(".side-panel-user")
+var container = document.querySelector(".msgbox")
 
 function closeForm() {
-      
+
     document.getElementById("myForm").style.display = "none";
     names = document.getElementById("email").value;
 
     if (!names) {
-        window.location.reload(); 
+        window.location.reload();
     }
-        
     document.getElementById("logicchat").style.display = "block";
 
     socket.emit('joined-user', names);
@@ -25,29 +25,35 @@ function closeForm() {
 
 socket.on('user-disconnected', (left) => {
     let div = document.createElement("div")
-    
-    div.innerHTML= `<p><b>${left}</b> left the chat</p>`;
+
+    div.innerHTML = `<p><b>${left}</b> left the chat</p>`;
 
     div.classList.add("status");
     container.appendChild(div);
 
-  
+
+
+
 
 })
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 socket.on('user-list', (users) => {
     dropdown.innerHTML = "";
+    dropdownSidepanel.innerHTML = "";
     users_arr = Object.values(users);
     for (let i = 0; i < users_arr.length; i++) {
         let div = document.createElement("div");
-        // div.innerText=
-        var content = `<a class="dropdown-item" href="#">   <p><b>${users_arr[i]}</b> online  🟢</p></a>  `;
+        let sidediv = document.createElement("div");
+        var content = `<a class="dropdown-item" href="#">   <p><b>${users_arr[i]}</b> online  🟢</p> </a><hr>  `;
         div.innerHTML = content;
-
+        sidediv.innerHTML = content;
         dropdown.appendChild(div);
+        dropdownSidepanel.appendChild(sidediv);
 
     }
+
+
 
 })
 
@@ -57,20 +63,37 @@ socket.on('user-list', (users) => {
 
 function text() {
 
+     /////////////////////////////////////////////////////////// [current time starts hear] ///////////////////////////////
+    // 👇️ from CURRENT DATE
+    const now = new Date();
+    const current = now.getHours() + ':' + now.getMinutes();
+
+    const withPmAm = now.toLocaleTimeString('en-US', {
+        // en-US can be set to 'default' to use user's browser settings
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+
+    console.log(withPmAm);
+    //////////////////////////////////////////////////////  [ current ends hear] /////////////////////////////////////////
+
+
     var x = document.getElementById("exampleFormControlTextarea1").value;
-   
+
     var div = document.createElement("div");
-   
-    div.innerHTML = x;
+
+    div.innerHTML =  `<p style="margin-bottom: 1px;">${x}</p>
+    <span> <h6> ${withPmAm} </h6></span>`;
+
     div.classList.add("message");
     div.classList.add("income");
     container.appendChild(div);
-  
+
 
     document.getElementById("exampleFormControlTextarea1").value = "";
-  
-    window.scrollTo(0, document.body.scrollHeight);
-    
+
+    container.scrollTop = container.scrollHeight;
+
     let msg = {
         user: names,
         message: x
@@ -85,18 +108,38 @@ function text() {
 
 socket.on('message', (msg) => {
 
+    /////////////////////////////////////////////////////////// [current time starts hear] ///////////////////////////////
+    // 👇️ from CURRENT DATE
+    const now = new Date();
+    const current = now.getHours() + ':' + now.getMinutes();
+
+    const withPmAm = now.toLocaleTimeString('en-US', {
+        // en-US can be set to 'default' to use user's browser settings
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+
+    console.log(withPmAm);
+    //////////////////////////////////////////////////////  [ current ends hear] /////////////////////////////////////////
+
+
     let markup = `
-    
-    <p>${msg.message}</p>
+    <p style="margin-bottom: 1px;">${msg.message}</p>
+    <span> <h6> ${withPmAm} </h6></span>
     `
+    let usermarkup = ` <h5>${msg.user}</h5>`
     var div = document.createElement("div");
-    
+    var userdiv = document.createElement("div");
+
     div.innerHTML = markup;
+    userdiv.innerHTML = usermarkup;
     div.classList.add("message");
     div.classList.add("outcome");
+    userdiv.classList.add("h5");
     container.appendChild(div);
+    container.appendChild(userdiv);
 
-    window.scrollTo(0, document.body.scrollHeight);
+    container.scrollTop = container.scrollHeight;
 })
 
 
@@ -104,21 +147,23 @@ socket.on('message', (msg) => {
 
 function clearchat() {
 
-    var x = document.getElementById("loader");
-   
-    x.style.display = "block";
-   
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight);
+    container.innerHTML = "";
 
 }
+
 
 function load() {
+
+    var x = document.getElementById("loader");
+
+    x.style.display = "block";
+
+    container.scrollTop = container.scrollHeight;
+    container.scrollTop = container.scrollHeight;
+    container.scrollTop = container.scrollHeight;
+    container.scrollTop = container.scrollHeight;
+    container.scrollTop = container.scrollHeight;
     window.location.reload();
 }
-
 
 
