@@ -39,6 +39,7 @@ body {
 }
 
 #logicchat {
+
     display: none;
 
 
@@ -146,10 +147,10 @@ h6 {
 
 
 textarea {
-
+    padding-left: 40px;
     margin-left: 5px;
     margin-right: 0px;
-    width: 641px;
+    width: 821px;
     height: 79px;
 
 
@@ -163,14 +164,39 @@ textarea {
     border-radius: 15px;
     background-color: #f9fafb;
     outline: none;
-    /* padding: 0 24px 0 24px; */
+
     overflow: hidden;
 }
 
 #send-btn {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     float: right;
-    margin-top: 10px;
-    margin-right: 250px;
+    margin-right: 185px;
+    margin-top: 35px;
+
+}
+
+
+#send-file {
+
+    margin-left: 2%;
+    margin-right: 25%;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    background-color: #e4e7ec;
+    display: none;
+
+}
+
+
+#send-btn-option {
+
+    flex-direction: column;
+    position: absolute;
 }
 
 
@@ -182,8 +208,8 @@ textarea {
     }
 
     textarea {
-        width: 221px;
-        height: 47px;
+        width: 209px;
+        height: 42px;
 
     }
 
@@ -209,8 +235,8 @@ textarea {
     }
 
     textarea {
-        width: 270px;
-        height: 48px;
+        width: 264px;
+        height: 35px;
 
     }
 
@@ -235,8 +261,8 @@ textarea {
     }
 
     textarea {
-        width: 323px;
-        height: 53px;
+        width: 311px;
+        height: 43px;
     }
 
 
@@ -290,6 +316,7 @@ textarea {
 }
 
 
+
 @media screen and (min-width: 1022px) {
 
     /*  for small laptop */
@@ -321,9 +348,14 @@ textarea {
         margin-right: 1px;
     }
 
-
+    #send-file {
+        margin-left: 30%;
+        margin-right: 25%;
+    }
 
 }
+
+
 
 @media screen and (min-width: 1440px) {
 
@@ -333,8 +365,54 @@ textarea {
     }
 
     textarea {
-        margin-left: 45px;
-        width: 897px;
+        margin-left: 5px;
+        width: 769px;
+        height: 47px;
+
+
+    }
+
+    #type {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        height: 506px;
+
+    }
+
+    #send-btn {
+        margin-right: 185px;
+        margin-top: 5px;
+
+    }
+
+    #form-txt {
+
+        margin-bottom: 2px;
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    #send-file {
+        margin-left: 30%;
+        margin-right: 25%;
+    }
+
+
+}
+
+
+
+
+@media screen and (min-width: 1535px) {
+
+    /*  for L laptop */
+    #option-box {
+        display: block;
+    }
+
+    textarea {
+        margin-left: 5px;
+        width: 821px;
         height: 112px;
 
     }
@@ -347,8 +425,8 @@ textarea {
     }
 
     #send-btn {
-        margin-right: 70px;
-        margin-top: 22px;
+        margin-right: 185px;
+        margin-top: 35px;
 
     }
 
@@ -359,76 +437,11 @@ textarea {
         margin-right: 1px;
     }
 
-  
-}
-/* @media screen and (min-width: 2560px) { */
-
-    /*  for L laptop */
-    /* #option-box {
-        display: block;
-    }
-
-    textarea {
-        margin-left: 27px;
-        width: 945px;
-        height: 121px;
-
-    }
-
-    #type {
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-        height: 507px;
-
-    }
-
-    #send-btn {
-        margin-right: 70px;
-        margin-top: 22px;
-
-    }
-
-    #form-txt {
-        margin-bottom: 2px;
-        margin-left: 1px;
-        margin-right: 1px;
-    }
-    
-} */
-
-
-
-
-
-
-/* @media screen and (max-width: 610px) {
-
-    #option-box {
-        display: none;
-    }
-
-    #form-txt {
-        margin-left: 1px;
-        margin-right: 1px;
+    #send-file {
+        margin-left: 30%;
+        margin-right: 25%;
     }
 
 
-    #send-btn {
-        margin-right: 15px;
-    }
 }
 
-@media screen and (min-width: 376px) {
-    #option-box {
-        display: none;
-    }
-
-    textarea {
-        width: 261px;
-        height: 42px;
-    }
-
-    #send-btn {
-        margin-top: 2px;
-    }
-} */
