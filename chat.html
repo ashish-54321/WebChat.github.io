@@ -37,7 +37,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <button onclick="clearchat()" type="button" class="btn btn-secondary btn-lg">clear chat</button>
+                        <a class="nav-link " href="#" role="button" onclick="clearchat()" aria-haspopup="true">clear
+                            chat</a>
+
                     </li>
 
                     <li class="nav-item dropdown">
@@ -64,9 +66,9 @@
         <!-- //////////////////////////////////////////// [ break ] /////////////////////////////////////////////// -->
         <!-- flex box -->
         <div id="option-box">
-            <h1> Private Chat </h1>
+            <h1>  Private Chat </h1>
             <span> coming soon... </span>
-              <hr>
+            <hr>
             <div class="side-panel-user">
                 <a class="dropdown-item" href="#">
                     <p><b>NO ONE JOIN NOW </b> only you online 🟢
@@ -77,6 +79,34 @@
         </div>
 
         <!-- Type box starts -->
+
+        <div id="send-file">
+            <div id="container">
+
+                <h4 class="card-title">send file</h4>
+
+                <div class="form-group">
+                    <input type="file" onchange="upload(this.files)">
+
+                </div>
+
+                <div class="form-group m-0">
+                       
+                    <button onclick="cancelBtn()" type="button" class="btn btn-cancel btn-lg" id="send-btn" style="margin-top: 0px;"> Cancel</button>
+                     
+                     <!--          send doc btn        -->
+                    
+                    <button onclick="sendFileBtn()" type="button" class="btn btn-primary btn-lg" id="send-btn" style="
+                        margin-top: 0px;
+                    "> Send
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+<!--                 All messsages add there           -->
 
         <div class="msgbox" id="type">
 
@@ -91,13 +121,19 @@
         </div>
 
         <div id="form-txt">
+            
+                <img src="paperclip.png" alt="select File" onclick="sendFile() " id="send-btn-option">
+           
+
+           
 
 
-
-            <textarea id="exampleFormControlTextarea1" rows="3" placeholder="Typing ...."></textarea>
+            <textarea id="exampleFormControlTextarea1" rows="3" placeholder="Typing ....">   </textarea>
             <!-- All buttons -->
             <button onclick="text()" type="button" class="btn btn-primary btn-lg" id="send-btn">Send </button>
         </div>
+
+
     </div>
 
     <!-- Contener ends -->
