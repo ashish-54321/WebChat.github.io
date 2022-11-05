@@ -1,3 +1,5 @@
+
+
 const socket = io();
 console.log('this is chat js ')
 
@@ -165,5 +167,25 @@ function load() {
     container.scrollTop = container.scrollHeight;
     window.location.reload();
 }
+
+function sendFile() {
+    
+    document.getElementById("send-file").style.display = "block";
+    document.getElementById("form-txt").style.display = "none";
+
+}
+
+function sendFileBtn() {
+  
+    alert(" This feture is under Mantainace");
+   
+}
+
+
+function cancelBtn() {
+    document.getElementById("send-file").style.display = "none";
+    document.getElementById("form-txt").style.display = "block";
+}
+
 
 
