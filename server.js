@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
         io.emit("user-list", users);
 
 
-    })
+    }) 
 
 
     socket.on('message', (msg) => {
