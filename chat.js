@@ -178,7 +178,8 @@ function sendFile() {
 function sendFileBtn() {
   
     //alert(" This feture is under Mantainace");
-    let markup = `<img src="upload${i}.jpg" alt="select File" />`
+   let markup = `<img src="upload${i}.jpg" alt="select File" />`
+        console.log(markup +"this file in chat.js");
         var div = document.createElement("div");
         var x = div.innerHTML = markup;
         div.classList.add("message");
@@ -191,10 +192,11 @@ function sendFileBtn() {
             user: names,
             message: x
         }
-
+        
         socket.emit('message', msg)
+
     
-    i++;
+        i++;
     // }
 
     document.getElementById("send-file").style.display = "none";
