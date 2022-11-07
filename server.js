@@ -60,7 +60,7 @@ io.on('connection', (socket) => {
         console.log(file); // <Buffer 25 50 44 ...>
 
         // save the content to the disk, for example
-        fs.writeFile("public/upload.jpg", file, (err) => {
+        fs.writeFile("upload.jpg", file, (err) => {
             callback({ message: err ? "failure" : "success" });
         });
     });
