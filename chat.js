@@ -177,7 +177,7 @@ function sendFile() {
 
 function sendFileBtn() {
   
-    //alert(" This feture is under Mantainace");
+    alert(" This feture is under Mantainace");
     let markup = `<img src="upload.jpg" alt="select File" />`
         var div = document.createElement("div");
         var x = div.innerHTML = markup;
