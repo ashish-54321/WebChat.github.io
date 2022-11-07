@@ -177,7 +177,26 @@ function sendFile() {
 
 function sendFileBtn() {
   
-    alert(" This feture is under Mantainace");
+    //alert(" This feture is under Mantainace");
+    let markup = `<img src="upload.jpg" alt="select File" />`
+        var div = document.createElement("div");
+        var x = div.innerHTML = markup;
+        div.classList.add("message");
+        div.classList.add("income");
+
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+
+        let msg = {
+            user: names,
+            message: x
+        }
+
+        socket.emit('message', msg)
+    // }
+
+    document.getElementById("send-file").style.display = "none";
+    document.getElementById("form-txt").style.display = "block";
 }
 
 
@@ -186,5 +205,10 @@ function cancelBtn() {
     document.getElementById("form-txt").style.display = "block";
 }
 
+function upload(files) {
+    socket.emit("upload", files[0], (status) => {
+        console.log(status);
+    });
+}
 
 
