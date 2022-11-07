@@ -187,5 +187,10 @@ function cancelBtn() {
     document.getElementById("form-txt").style.display = "block";
 }
 
+function upload(files) {
+    socket.emit("upload", files[0], (status) => {
+        console.log(status);
+    });
+}
 
 
