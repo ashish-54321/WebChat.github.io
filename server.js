@@ -1,7 +1,7 @@
 //node server which will handells socket.io conections
 
 
-
+const fs = require('fs');
 const express = require('express')
 const app = express()
 
@@ -55,5 +55,14 @@ io.on('connection', (socket) => {
         io.emit("user-list", users);
 
     })
+    
+     socket.on("upload", (file, callback) => {
+        console.log(file); // <Buffer 25 50 44 ...>
+
+        // save the content to the disk, for example
+        fs.writeFile("public/upload.jpg", file, (err) => {
+            callback({ message: err ? "failure" : "success" });
+        });
+    });
     
 })
