@@ -2,7 +2,7 @@
 
 const socket = io();
 console.log('this is chat js ')
-
+var i=0;
 var names;
 var dropdown = document.querySelector(".dropdown-menu")
 var dropdownSidepanel = document.querySelector(".side-panel-user")
@@ -177,8 +177,8 @@ function sendFile() {
 
 function sendFileBtn() {
   
-    alert(" This feture is under Mantainace");
-    let markup = `<img src="upload.jpg" alt="select File" />`
+    //alert(" This feture is under Mantainace");
+    let markup = `<img src="upload${i}.jpg" alt="select File" />`
         var div = document.createElement("div");
         var x = div.innerHTML = markup;
         div.classList.add("message");
@@ -206,7 +206,7 @@ function cancelBtn() {
 }
 
 function upload(files) {
-    socket.emit("upload", files[0], (status) => {
+    socket.emit("upload", files[0], i, (status) => {
         console.log(status);
     });
 }
