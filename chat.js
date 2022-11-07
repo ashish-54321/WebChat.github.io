@@ -193,6 +193,8 @@ function sendFileBtn() {
         }
 
         socket.emit('message', msg)
+    
+    i++;
     // }
 
     document.getElementById("send-file").style.display = "none";
