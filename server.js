@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
 
     })
     
-     socket.on("upload", (file, i, callback) => {
+     socket.on("upload", (file, callback) => {
         console.log(file); // <Buffer 25 50 44 ...>
 io.emit("imgStack", i);
         // save the content to the disk, for example
