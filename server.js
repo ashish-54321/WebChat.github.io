@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 
 const http = require('http').createServer(app)
-
+var i = 0;
 const PORT = process.env.PORT || 4000
 
 
@@ -58,10 +58,11 @@ io.on('connection', (socket) => {
     
      socket.on("upload", (file, i, callback) => {
         console.log(file); // <Buffer 25 50 44 ...>
-
+io.emit("imgStack", i);
         // save the content to the disk, for example
         fs.writeFile("upload"+i+".jpg", file, (err) => {
             callback({ message: err ? "failure" : "success" });
+            i++;
         });
     });
 
