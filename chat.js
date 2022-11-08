@@ -210,7 +210,7 @@ function cancelBtn() {
 }
 
 function upload(files) {
-    socket.emit("upload", files[0], i, (status) => {
+    socket.emit("upload", files[0], (status) => {
         console.log(status);
     });
 }
