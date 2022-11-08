@@ -23,7 +23,9 @@ app.get('/', (req, res) => {
 })
 
 /// [ socket.io]/// 
-const io = require('socket.io')(http)
+const io = require('socket.io')(http ,{
+    maxHttpBufferSize: 1e8
+});
 var users = {};
 
 
