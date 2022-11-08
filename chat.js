@@ -178,7 +178,7 @@ function sendFile() {
 function sendFileBtn() {
   
     //alert(" This feture is under Mantainace");
-   let markup = `<img src="upload${i}.jpg" alt="select File" />`
+   let markup = `<img src="upload${i}.jpg" alt="select File" width="200" height="200" />`
         console.log(markup +"this file in chat.js");
         var div = document.createElement("div");
         var x = div.innerHTML = markup;
