@@ -7,7 +7,7 @@ const app = express()
 
 const http = require('http').createServer(app)
 var i = 0;
-var l = 1;
+var l = 0;
 const PORT = process.env.PORT || 4000
 
 
