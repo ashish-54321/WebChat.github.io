@@ -57,19 +57,7 @@ io.on('connection', (socket) => {
         delete users[socket.id];
         io.emit("user-list", users);
         
-         for (let l = 0  ;l <= i; l++) {
-
-
-
-            fs.unlink("public/upload" + l + ".jpg", function (err) {
-                if (err) {
-                    console.error(err);
-                } else {
-                    console.log("File removed:");
-                }
-            });
-        }
-        i = 0;
+        
 
     })
     
