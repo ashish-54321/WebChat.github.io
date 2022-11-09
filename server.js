@@ -7,7 +7,7 @@ const app = express()
 
 const http = require('http').createServer(app)
 var i = 0;
-var l = 0;
+
 const PORT = process.env.PORT || 4000
 
 
@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
         delete users[socket.id];
         io.emit("user-list", users);
         
-         for ( l  ;l <= i; l++) {
+         for (let l = 0  ;l <= i; l++) {
 
 
 
@@ -69,6 +69,7 @@ io.on('connection', (socket) => {
                 }
             });
         }
+        i = 0;
 
     })
     
