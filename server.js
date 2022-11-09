@@ -7,6 +7,7 @@ const app = express()
 
 const http = require('http').createServer(app)
 var i = 0;
+var l = 1;
 const PORT = process.env.PORT || 4000
 
 
@@ -55,6 +56,19 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('user-disconnected', usee = users[socket.id]);
         delete users[socket.id];
         io.emit("user-list", users);
+        
+         for ( l  ;l <= i; l++) {
+
+
+
+            fs.unlink("public/upload" + l + ".jpg", function (err) {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log("File removed:");
+                }
+            });
+        }
 
     })
     
